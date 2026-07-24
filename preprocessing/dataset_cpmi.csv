@@ -1,0 +1,106 @@
+Usia,Pendidikan,Pengalaman_Kerja,Kemampuan_Bahasa,Keterampilan,Kesehatan,Kelengkapan_Dokumen,Negara_Penempatan
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Tidak Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Cukup,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Tidak Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Tidak Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Tidak Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Ada Riwayat Penyakit,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Cukup,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Tidak Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Tidak Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Ada,Cukup,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Tidak Ada,Baik,Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Tidak Sesuai,Sehat,Lengkap,Jepang
+Memenuhi,D3,Ada,Baik,Sesuai,Ada Riwayat Penyakit,Lengkap,Jepang
+Memenuhi,S1,Ada,Baik,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,S1,Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,SMA,Ada,Baik,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,D3,Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,S1,Tidak Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Tidak Lengkap,Korea Selatan
+Memenuhi,S1,Ada,Cukup,Tidak Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,SMA,Ada,Baik,Sesuai,Ada Riwayat Penyakit,Lengkap,Korea Selatan
+Memenuhi,D3,Tidak Ada,Baik,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,S1,Ada,Cukup,Sesuai,Sehat,Tidak Lengkap,Korea Selatan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,D3,Ada,Baik,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Korea Selatan
+Memenuhi,S1,Tidak Ada,Baik,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,SMA,Tidak Ada,Cukup,Sesuai,Sehat,Lengkap,Korea Selatan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Tidak Ada,Cukup,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Tidak Lengkap,Taiwan
+Memenuhi,D3,Tidak Ada,Cukup,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Cukup,Tidak Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Kurang,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Tidak Ada,Cukup,Sesuai,Ada Riwayat Penyakit,Lengkap,Taiwan
+Memenuhi,D3,Tidak Ada,Kurang,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Tidak Ada,Cukup,Tidak Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Taiwan
+Memenuhi,D3,Tidak Ada,Cukup,Sesuai,Ada Riwayat Penyakit,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Cukup,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Tidak Ada,Kurang,Sesuai,Sehat,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Cukup,Tidak Sesuai,Ada Riwayat Penyakit,Lengkap,Taiwan
+Memenuhi,SMA,Ada,Kurang,Sesuai,Sehat,Lengkap,Arab Saudi
+Memenuhi,D3,Ada,Baik,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,S1,Ada,Cukup,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,D3,Ada,Cukup,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Cukup,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,D3,Tidak Ada,Cukup,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,S1,Ada,Baik,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Kurang,Tidak Sesuai,Sehat,Lengkap,Arab Saudi
+Memenuhi,D3,Ada,Cukup,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,D3,Tidak Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Cukup,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Arab Saudi
+Memenuhi,SMA,Ada,Kurang,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Arab Saudi
+Memenuhi,D3,Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Arab Saudi
+Memenuhi,SMP,Ada,Kurang,Sesuai,Sehat,Lengkap,Malaysia
+Memenuhi,SMP,Ada,Kurang,Sesuai,Sehat,Tidak Lengkap,Malaysia
+Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Sehat,Lengkap,Malaysia
+Memenuhi,SMP,Tidak Ada,Kurang,Sesuai,Sehat,Lengkap,Malaysia
+Memenuhi,SMA,Ada,Kurang,Tidak Sesuai,Sehat,Tidak Lengkap,Malaysia
+Memenuhi,SMP,Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Lengkap,Malaysia
+Memenuhi,SMP,Tidak Ada,Kurang,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Malaysia
+Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Malaysia
+Memenuhi,SMP,Ada,Kurang,Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Malaysia
+Memenuhi,SMP,Tidak Ada,Cukup,Tidak Sesuai,Sehat,Lengkap,Malaysia
+Memenuhi,SMA,Ada,Kurang,Tidak Sesuai,Sehat,Lengkap,Malaysia
+Memenuhi,SMP,Ada,Kurang,Tidak Sesuai,Sehat,Tidak Lengkap,Malaysia
+Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Sehat,Tidak Lengkap,Malaysia
+Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Lengkap,Malaysia
+Memenuhi,SMP,Ada,Cukup,Tidak Sesuai,Sehat,Tidak Lengkap,Malaysia
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Cukup,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,D3,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Cukup,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMA,Tidak Ada,Kurang,Tidak Sesuai,Ada Riwayat Penyakit,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
+Tidak Memenuhi,SMP,Tidak Ada,Kurang,Tidak Sesuai,Tidak Sehat,Tidak Lengkap,Tidak Layak
