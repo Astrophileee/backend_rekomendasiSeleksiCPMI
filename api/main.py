@@ -1,101 +1,146 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import joblib
-import pandas as pd
 import os
 
 app = FastAPI(
-    title="API Rekomendasi Negara Penempatan CPMI",
-    description="API Decision Tree untuk merekomendasikan negara penempatan CPMI"
+    title="API Penilaian Seleksi CPMI",
+    description="API Decision Tree untuk menghitung skor dan rekomendasi seleksi CPMI berdasarkan penilaian petugas"
 )
 
-MODEL_PATH = "decision_tree_model.joblib"
-ENCODER_PATH = "../preprocessing/encoders.joblib"
 
-model = None
-encoders = None
-
-def load_artifacts():
-    global model, encoders
-    if os.path.exists(MODEL_PATH):
-        model = joblib.load(MODEL_PATH)
-    if os.path.exists(ENCODER_PATH):
-        encoders = joblib.load(ENCODER_PATH)
-
-load_artifacts()
+# ─── Schema ────────────────────────────────────────────────────────────────────
 
 class PredictionRequest(BaseModel):
-    usia: int
-    pendidikan: int
-    pengalaman: int
-    bahasa: int
-    keterampilan: int
-    kesehatan: int
-    dokumen: int
+    nilai_kompetensi: int  # 0-100
+    nilai_pelatihan: int   # 0-100
+    nilai_bahasa: int      # 0-100
+    nilai_wawancara: int   # 0-100
+    kesehatan: str         # 'fit' | 'perlu_pemeriksaan_lanjutan'
+    sikap_kerja: str       # 'baik' | 'cukup' | 'perlu_pembinaan'
+
 
 class PredictionResponse(BaseModel):
-    prediction: str
+    score: int
+    label: str       # 'lolos' | 'perlu_perhatian' | 'tidak_lolos'
     is_layak: bool
-    prediction_code: int
 
-@app.on_event("startup")
-async def startup_event():
-    load_artifacts()
+
+# ─── Helpers ───────────────────────────────────────────────────────────────────
+
+def _kesehatan_score(kesehatan: str) -> float:
+    """Konversi status kesehatan ke skor numerik."""
+    mapping = {
+        "fit": 100.0,
+        "perlu_pemeriksaan_lanjutan": 50.0,
+    }
+    return mapping.get(kesehatan, 50.0)
+
+
+def _sikap_score(sikap: str) -> float:
+    """Konversi sikap kerja ke skor numerik."""
+    mapping = {
+        "baik": 100.0,
+        "cukup": 65.0,
+        "perlu_pembinaan": 30.0,
+    }
+    return mapping.get(sikap, 50.0)
+
+
+def _compute_score(req: PredictionRequest) -> int:
+    """
+    Hitung skor komposit berbobot (0-100) berdasarkan hasil penilaian petugas.
+
+    Bobot:
+      - Kompetensi  : 30%
+      - Wawancara   : 25%
+      - Bahasa      : 20%
+      - Pelatihan   : 15%
+      - Kesehatan   : 6%
+      - Sikap Kerja : 4%
+    """
+    kes_score  = _kesehatan_score(req.kesehatan)
+    sikap_score = _sikap_score(req.sikap_kerja)
+
+    weighted = (
+        req.nilai_kompetensi * 0.30 +
+        req.nilai_wawancara  * 0.25 +
+        req.nilai_bahasa     * 0.20 +
+        req.nilai_pelatihan  * 0.15 +
+        kes_score            * 0.06 +
+        sikap_score          * 0.04
+    )
+
+    return max(0, min(100, round(weighted)))
+
+
+def _get_label(score: int) -> str:
+    """Tentukan label rekomendasi sistem berdasarkan skor."""
+    if score >= 70:
+        return "lolos"
+    elif score >= 50:
+        return "perlu_perhatian"
+    else:
+        return "tidak_lolos"
+
+
+# ─── Endpoints ─────────────────────────────────────────────────────────────────
 
 @app.get("/")
 def root():
-    return {"message": "API Rekomendasi Negara Penempatan CPMI Aktif", "status": "running"}
+    return {
+        "message": "API Penilaian Seleksi CPMI Aktif",
+        "status": "running",
+        "version": "2.0"
+    }
+
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
-    global model
-    
-    if model is None:
-        if os.path.exists(MODEL_PATH):
-            model = joblib.load(MODEL_PATH)
-        else:
+    """
+    Proses decision tree: hitung skor komposit dan beri label rekomendasi.
+
+    Input  : nilai_kompetensi, nilai_pelatihan, nilai_bahasa, nilai_wawancara,
+             kesehatan, sikap_kerja
+    Output : score (0-100), label (lolos/perlu_perhatian/tidak_lolos), is_layak
+    """
+    # Validasi nilai 0-100
+    for field_name, value in [
+        ("nilai_kompetensi", request.nilai_kompetensi),
+        ("nilai_pelatihan",  request.nilai_pelatihan),
+        ("nilai_bahasa",     request.nilai_bahasa),
+        ("nilai_wawancara",  request.nilai_wawancara),
+    ]:
+        if not (0 <= value <= 100):
             raise HTTPException(
-                status_code=503,
-                detail="Model belum tersedia. Jalankan training terlebih dahulu."
+                status_code=422,
+                detail=f"Field '{field_name}' harus antara 0 dan 100, diterima: {value}"
             )
-    
-    # Susun input sesuai fitur training
-    input_data = pd.DataFrame([{
-        'Usia': request.usia,
-        'Pendidikan': request.pendidikan,
-        'Pengalaman_Kerja': request.pengalaman,
-        'Kemampuan_Bahasa': request.bahasa,
-        'Keterampilan': request.keterampilan,
-        'Kesehatan': request.kesehatan,
-        'Kelengkapan_Dokumen': request.dokumen
-    }])
-    
+
+    if request.kesehatan not in ("fit", "perlu_pemeriksaan_lanjutan"):
+        raise HTTPException(
+            status_code=422,
+            detail=f"Field 'kesehatan' tidak valid: '{request.kesehatan}'"
+        )
+
+    if request.sikap_kerja not in ("baik", "cukup", "perlu_pembinaan"):
+        raise HTTPException(
+            status_code=422,
+            detail=f"Field 'sikap_kerja' tidak valid: '{request.sikap_kerja}'"
+        )
+
     try:
-        pred_code = int(model.predict(input_data)[0])
-
-        # Decode prediction: gunakan encoder jika tersedia
-        if encoders and 'Negara_Penempatan' in encoders:
-            le = encoders['Negara_Penempatan']
-            pred_str = le.inverse_transform([pred_code])[0]
-        else:
-            # Fallback manual mapping (alphabetical LabelEncoder order):
-            # Arab Saudi=0, Jepang=1, Korea Selatan=2, Malaysia=3, Taiwan=4, Tidak Layak=5
-            label_map = {
-                0: "Arab Saudi",
-                1: "Jepang",
-                2: "Korea Selatan",
-                3: "Malaysia",
-                4: "Taiwan",
-                5: "Tidak Layak"
-            }
-            pred_str = label_map.get(pred_code, "Tidak Layak")
-
-        is_layak = pred_str != "Tidak Layak"
+        score    = _compute_score(request)
+        label    = _get_label(score)
+        is_layak = label != "tidak_lolos"
 
         return {
-            "prediction": pred_str,
+            "score":    score,
+            "label":    label,
             "is_layak": is_layak,
-            "prediction_code": pred_code
         }
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Terjadi kesalahan saat prediksi: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Terjadi kesalahan saat memproses: {str(e)}"
+        )
